@@ -1,0 +1,11 @@
+md-dialog{
+	width: 700px;
+	height: 400px;
+	position: relative; 
+}
+
+img{
+	position: absolute;
+	bottom: 0; 
+	left: 285px;
+}

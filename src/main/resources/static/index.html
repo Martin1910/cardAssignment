@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=windows-1250" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  		<link rel="stylesheet" href="./css/index.css">
+  		
+  		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  		<script src="./jshg/jquery-1.11.0.min.js"></script>
+  		<script src="./jshg/compatibility.js"></script>
+		<script src="./jshg/jshg.js"></script>
+  		
+		<title>AngularJS Card Assigment by DM</title>
+	</head>
+	<body ng-app="dashboard">
+		
+		<div id="learningShownHere" class="learning-div"></div>
+		
+		<div class="gesture-div">
+			<div id="gestureShownHere"></div>
+		</div>
+		
+		<div ng-controller="dialogController" id="dialogCtrl" layout="row" layout-align="space-around center" layout-wrap>
+		
+			<card flex="33"></card>
+			
+			<card flex="33"></card>
+			
+			<card flex="33"></card>
+			
+			<card flex="33"></card>
+			
+			<card flex="33"></card>
+			
+			<card flex="33"></card>
+							
+		</div>
+		
+		<div class="guide" ng-controller="GuideCtrl">
+			<md-button md-colors="{background: 'lime' }" class="md-primary md-raised" ng-click="showGuide($event)">Használati útmutató</md-button>
+		</div>	
+		
+		<div class="jshg">
+			<md-button md-colors="{background: 'green-A400' }" id="jshg_button" class="md-primary md-raised" onClick="jshgCamera()">Start JSHG</md-button><br>
+		</div>
+		
+		<div class="objectdetect">
+			<md-button md-colors="{background: 'cyan' }" id="objectdetect_button" class="md-primary md-raised" onClick="objectdetectCamera()">Start Objectdetect</md-button>
+		</div>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+  		
+  		<script src="./objectdetect/objectdetectGesturehandler.js" type="text/javascript"></script>
+  		<script src="./jshg/jshgGesturehandler.js" type="text/javascript"></script>
+  		<script src="./js/index.js" type="text/javascript"></script>
+  		<script src="./js/guide.js" type="text/javascript"></script>
+  		<script src="./js/cameraButtonHandler.js" type="text/javascript"></script>
+  		<script src="./js/cardAssignment.js" type="text/javascript"></script>
+  			
+	</body>
+</html>

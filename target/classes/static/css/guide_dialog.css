@@ -1,0 +1,32 @@
+a{
+	font-size: 20px;
+}
+
+a:link {
+    color: #ff0000; 
+    background-color: transparent; 
+    text-decoration: none;
+}
+
+a:visited {
+    color: #ff0000;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff0000;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ff0000;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+}

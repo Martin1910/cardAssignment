@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: cardAssignment
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Martin
+Implementation-Vendor-Id: com.martin.dolniczki
+Build-Jdk: 1.8.0_131
+Implementation-URL: http://projects.spring.io/spring-boot/cardAssignme
+ nt/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

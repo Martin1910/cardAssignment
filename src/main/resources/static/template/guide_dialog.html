@@ -1,0 +1,146 @@
+<link rel="stylesheet" href="./css/guide_dialog.css">
+<md-dialog aria-label="Guide">
+
+  <form ng-cloak>
+  
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Használati útmutatás a kézmozdulat vezérlőkhöz</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="./img/icons8-Delete.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+    
+    	<md-content>
+    	
+    		<md-tabs md-dynamic-height md-border-bottom>
+    		
+    			<md-tab label="Általános információk">
+      			
+        			<md-content class="md-padding">
+        			
+         				<div class="md-dialog-content">
+         				
+        						<p>Mindkét kézfelismerő ugyanazt a célt szolgálja: az oldalon látható kártyákkal lehet bővebb információt megjeleníteni. Ehhez azonban el kell indítanunk egy folyamatot, ami egy kijelölést mozgatva végigmegy a kártyákon.</p>
+        						
+        						<p>A vezérlő mozdulatok mindkét esetben ugyanazok:
+        						
+        						<ol>
+        							<li><b>Miután elindítottuk valamelyik kézfelismerőt</b>
+        							<ul>
+        								<li>Jobbra: ha a kezünket jobbra mozgatjuk, akkor a kijelölés az első kártyától kezdve fog végighaladni jobbra.</li>
+        								<li>Balra: ha a kezünket balra mozgatjuk, akkor a kijelölés az utolsó kártyától kezdve fog végighaladni balra.</li>
+        							</ul>
+        							<br>
+        							<li><b>Mozgás közben</b>
+        							<ul>
+        								<li>Jobbra: ha a kijelölés balra halad, akkor jobb kézmozgás esetén megáll a kijelölés az adott kártyán. Ellenkező esetben nincs hatása (<b>JSHG</b>-nél érdemes használni).</li>
+        								<li>Balra: ha a kijelölés jobbra halad, akkor bal kézmozgás esetén megáll a kijelölés az adott kártyán. Ellenkező esetben nincs hatása (<b>JSHG</b>-nél érdemes használni).</li>
+        								<li>Fel: akár jobbra, akár balra halad a kijelölés, ha a kezünket felfelé mozgatjuk, akkor megáll a kijelölés az adott kártyán. Ez az <b>objectdetect</b> kézfelismerő esetén fontos, ugyanis ennél ezt a fajta megállítási módot érdemes használni!</li>
+        							</ul>
+        							<br>
+        							<li><b>Álló állapotban</b>
+        							<ul>
+        								<li>Jobbra: ha a kezünket jobbra mozgatjuk, akkor a kijelölés az adott kártyától kezdve fog végighaladni jobbra.</li>
+        								<li>Balra: ha a kezünket balra mozgatjuk, akkor a kijelölés az adott kártyától kezdve fog végighaladni balra.</li>
+        								<li>Lefele: ha a kezünket lefele mozgatjuk, akkor felugrik egy dialógus, ami az adott kártyáról bővebb információt tartalmaz.</li>
+        							</ul>
+        							<br>
+        							<li><b>Dialógusnál</b>
+        							<ul>
+        								<li>Felfele: ha a kezünket felfele mozgatjuk, akkor a dialógus eltűnik és az Álló állapotban lévő kézmozdulatokkal lehet tovább vezérelni.</li>
+        							</ul>
+        							
+        							<h3>Az objectdetect féle kézfelismerő valamivel jobb, ugyanis mozgás közben szabadon leengedhetjük a kezünket (a másiknál a piros pötty mindig ott van), illetve a másiknál a felső cellába néha nehéz eljutni.</h3>
+									<h2>FONTOS: ha problémamentes élményt szeretnénk, akkor célszerű a kamera számára világos körülmények között használni, illetve a kezünket valami egyszínű (legjobb talán a fehér) felület elé tenni.
+        							
+        						</ol>
+      					</div>
+      					
+            		</md-content>
+            		
+            	</md-tab>
+    		
+      			<md-tab label="jshg">
+      			
+        			<md-content class="md-padding">
+        			
+         				<div class="md-dialog-content">
+         				
+         						<p>
+         							Elindítás után elindul egy bőrdetektáló funkció, ami 10 másodpercig tart és a kezünket a képen látható pöttyök felé kell helyezni. Ezáltal javul a kéz felismerésének pontossága.
+         						</p>
+         						
+        						<p>
+									A JSHG pluginban a megjelenített képen látható egy piros és több sárga pötty. A piros pötty a kéz pozícióját jelzi, a sárga pedig az ujjakét.
+        						</p>
+        						
+        						<img src="./img/handgestureimage.jpg"></img>
+        						
+        						<p>
+									A kép 9 cellára van felosztva és attól függően, hogy a kezünk (piros pötty) melyik pozícióban van történik valami.          
+        						</p>
+        
+       							 <img src="./img/handpositionarea.jpg"></img>
+       							 
+        						<p>
+          							Ennél a kézfelismerőnél fontos, hogy a kéz a piros pöttyel együtt benne legyen valamelyik cellában, illetve úgy van beállítva, hogy csak a <b>LEFT</b>, <b>RIGHT</b>, <b>UP</b> és <b>DOWN</b> cellákat veszi figyelembe.
+        						</p>
+        						
+        						<br>
+        						<p>
+        							<center><a href="https://nhudinhtuan.github.io/jshg/" target="_blank">A JSHG weboldala</a></center>
+        						</p>
+      					</div>
+      					
+            		</md-content>
+            		
+            	</md-tab>
+            	
+            	<md-tab label="objectdetect">
+      			
+        			<md-content class="md-padding">
+        			
+         				<div class="md-dialog-content">
+     				
+        					<p>
+								Az objectdetect pluginban az ökölbe szorított kézzel való kézmozgásokat érzékeli a kamera, ahogy a lenti képen is látható.<br>
+								Érdemes próbálgatni, hogy a kamera milyen távolságból érzékeli jól a kezünket. Akkor lesz jó, ha ökölbe szorítjuk a kezünket és a képen körülötte lesz egy kék négyzet <b>folyamatosan</b>.
+        					</p>
+        					<br>
+        					
+        					<img src="./img/objectdetect_example.gif"></img>
+        					
+        					<br>
+        					<p>
+        						Mivel itt nincsenek cellák, akár a kamera által érzékelt kép legszéléről is indíthatunk kézmozgást, ugyanis a kéznek meg kell tennie egy bizonyos távot, hogy esemény váltódjon ki.<br>
+        						<h2>FONTOS: ahhoz, hogy a kamera érzékelje a mozgásokat a kéznek egyszerre kell megtenni egy bizonyos utat. Akkor lesz jó, ha a kék négyzet folyamatosan követi a kezünket.</h2>
+        					</p>
+        					
+        					<br>
+        					<p>
+        						<center><a href="https://github.com/mtschirs/js-objectdetect" target="_blank">Az objectdetect weboldala</a></center>
+        					</p>
+     					
+      					</div>
+      					
+            		</md-content>
+            		
+            	</md-tab>
+            	
+            	<md-tab>
+            	</md-tab>
+            	
+            </md-tabs>
+            
+  		</md-content>
+      
+    </md-dialog-content>
+
+  </form>
+  
+</md-dialog>
